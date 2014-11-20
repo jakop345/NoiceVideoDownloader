@@ -28,5 +28,11 @@ namespace NoiceVideoDownloader
         {
 
         }
+
+        private static SearchProvider searchProvider = new SearchProvider();
+        public static SearchProvider SearchProvider
+        {
+            get {return SearchProvider;}
+        }
     }
 }
