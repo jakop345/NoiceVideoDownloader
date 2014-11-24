@@ -29,8 +29,8 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <ComboBox Grid.Column="0" VerticalAlignment="Top" Width="120"/>
-                <TextBox Text="TextBox" MinWidth ="100" Grid.Column="1" Margin="10,0,0,0"/>
-                <Button Grid.Column="2" Margin="10,0,0,0">
+                <TextBox Text="Boobs" Name="SearchTextEdit" MinWidth ="100" Grid.Column="1" Margin="10,0,0,0"/>
+                <Button Grid.Column="2" Margin="10,0,0,0" Click="OnBtnSearchClick">
                     Поиск Видео
                 </Button>
             </Grid>

@@ -12,5 +12,11 @@ namespace NoiceVideoDownloader
     /// </summary>
     public partial class App : Application
     {
+        private static SearchProvider searchProvider = new SearchProvider();
+        public static SearchProvider SearchProvider
+        {
+            get { return searchProvider; }
+        }
+
     }
 }

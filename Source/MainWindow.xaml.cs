@@ -29,10 +29,12 @@ namespace NoiceVideoDownloader
 
         }
 
-        private static SearchProvider searchProvider = new SearchProvider();
-        public static SearchProvider SearchProvider
+        
+        // start search
+        private void OnBtnSearchClick(object sender, RoutedEventArgs e)
         {
-            get {return SearchProvider;}
+            App.SearchProvider.StartSearch(SearchTextEdit.Text);
+
         }
     }
 }
