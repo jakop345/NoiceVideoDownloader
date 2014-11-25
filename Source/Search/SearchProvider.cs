@@ -131,7 +131,7 @@ namespace NoiceVideoDownloader
                     if (searchResult.Id.Kind == "youtube#video")
                     {
                         var sResult = new SearchResultItem();
-                        sResult.ThumbnailURL = searchResult.Snippet.Thumbnails.Default.Url;
+                        sResult.ThumbnailURL = searchResult.Snippet.Thumbnails.Medium.Url;
                         sResult.Title        = searchResult.Snippet.Title;
                         sResult.Discripion   = searchResult.Snippet.Description;
                         App.SearchProvider.SearchResult.Add(sResult);
