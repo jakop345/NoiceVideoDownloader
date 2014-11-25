@@ -78,14 +78,39 @@
             <TextBlock DockPanel.Dock="Bottom">
                     // навигация
             </TextBlock>
-            <Grid>
-                <ListView x:Name="SearchResultViewCtrl" Margin="10" ItemsSource="{Binding}" >
+            <Grid >
+                <ListView  x:Name="SearchResultViewCtrl" Margin="10" ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                    <ListBox.ItemsPanel >
+                        <ItemsPanelTemplate >
+                            <WrapPanel Orientation="Horizontal"  Width="auto" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel>
-                                <TextBlock Text="Name: " />
-                                <TextBlock Text="{Binding Title}"/>
-                                
+                            <WrapPanel Width="600" HorizontalAlignment="Center">
+                                <Border Margin="-2,2" Padding="3" BorderBrush="Blue" BorderThickness="2" CornerRadius="6" >
+                                    <!--Border.Width ="300">
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type ScrollContentPresenter}}" >
+                                        
+                                    </Border.Width-->
+
+                                    <Grid Width="600">
+                                        
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image  Source="{Binding ThumbnailURL}" Grid.Column="0"/>
+                                        <WrapPanel Grid.Column="1" >
+                                            <TextBlock Text="{Binding Title}" />
+                                            <TextBlock Text="{Binding Discripion}" TextWrapping="WrapWithOverflow" />
+                                        </WrapPanel>
+                                        
+                                    </Grid>
+                                </Border>
+
+
+
                             </WrapPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -27,13 +27,6 @@ namespace NoiceVideoDownloader
         public MainWindow()
         {
             InitializeComponent();
-            SearchResultItem si = new SearchResultItem();
-            si.Title = "test";
-            App.SearchProvider.SearchResult.Add(si);
-            si = new SearchResultItem();
-            si.Title = "test";
-            App.SearchProvider.SearchResult.Add(si);
-
             SearchResultViewCtrl.DataContext = App.SearchProvider.SearchResult;
         }
 
@@ -47,12 +40,6 @@ namespace NoiceVideoDownloader
         {
             App.SearchProvider.SearchResult.Clear();
             App.SearchProvider.Run();
-            SearchResultItem si = new SearchResultItem();
-            si.Title = "test3";
-            App.SearchProvider.SearchResult.Add(si);
-
-            
-            
         }
     }
 }
