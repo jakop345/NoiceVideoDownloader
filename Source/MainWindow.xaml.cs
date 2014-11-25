@@ -12,6 +12,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Collections.ObjectModel;
+
+
+
 namespace NoiceVideoDownloader
 {
     /// <summary>
@@ -19,9 +23,18 @@ namespace NoiceVideoDownloader
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<SearchResultItem> SearchResult;
         public MainWindow()
         {
             InitializeComponent();
+            SearchResultItem si = new SearchResultItem();
+            si.Title = "test";
+            App.SearchProvider.SearchResult.Add(si);
+            si = new SearchResultItem();
+            si.Title = "test";
+            App.SearchProvider.SearchResult.Add(si);
+
+            SearchResultViewCtrl.DataContext = App.SearchProvider.SearchResult;
         }
 
         private void SelectViewMode(object sender, RoutedEventArgs e)
@@ -29,12 +42,18 @@ namespace NoiceVideoDownloader
 
         }
 
-        
         // start search
         private void OnBtnSearchClick(object sender, RoutedEventArgs e)
         {
-            App.SearchProvider.StartSearch(SearchTextEdit.Text);
+            App.SearchProvider.SearchResult.Clear();
+            App.SearchProvider.Run();
+            SearchResultItem si = new SearchResultItem();
+            si.Title = "test3";
+            App.SearchProvider.SearchResult.Add(si);
 
+            
+            
         }
     }
 }
+  

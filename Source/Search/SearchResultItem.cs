@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NoiceVideoDownloader
 {
-    class SearchResultItem
+    public class SearchResultItem
     {
 
         private string thumbnailURL;
@@ -20,6 +20,13 @@ namespace NoiceVideoDownloader
         {
             get { return title; }
             set { title = value; }
+        }
+
+        private string discripion;
+        public string Discripion
+        {
+            get { return discripion; }
+            set { discripion = value; }
         }
 
         private string sourceUrl;
